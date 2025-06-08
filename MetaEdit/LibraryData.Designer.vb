@@ -23,8 +23,8 @@ Partial Class LibraryData
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.RenameFolders = New System.Windows.Forms.Button()
 		Me.LoadSources = New System.Windows.Forms.Button()
 		Me.EditXML = New System.Windows.Forms.Button()
@@ -120,23 +120,24 @@ Partial Class LibraryData
 		'KeyValGrid
 		'
 		Me.KeyValGrid.AllowUserToOrderColumns = True
-		DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.KeyValGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+		DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.KeyValGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
 		Me.KeyValGrid.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.KeyValGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-		DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-		DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.KeyValGrid.DefaultCellStyle = DataGridViewCellStyle6
+		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+		DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.KeyValGrid.DefaultCellStyle = DataGridViewCellStyle2
 		Me.KeyValGrid.Location = New System.Drawing.Point(3, 1)
 		Me.KeyValGrid.Name = "KeyValGrid"
 		Me.KeyValGrid.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.KeyValGrid.RowTemplate.Height = 25
 		Me.KeyValGrid.Size = New System.Drawing.Size(660, 666)
 		Me.KeyValGrid.TabIndex = 2
 		'

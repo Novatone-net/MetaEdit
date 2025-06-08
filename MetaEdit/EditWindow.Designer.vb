@@ -73,13 +73,22 @@ Partial Class EditWindow
 		Me.ShowFolder = New System.Windows.Forms.Button()
 		Me.Label22 = New System.Windows.Forms.Label()
 		Me.Label23 = New System.Windows.Forms.Label()
+		Me.Publish = New System.Windows.Forms.CheckBox()
+		Me.Label24 = New System.Windows.Forms.Label()
+		Me.DBKey = New System.Windows.Forms.TextBox()
+		Me.Label25 = New System.Windows.Forms.Label()
+		Me.TocLink = New System.Windows.Forms.TextBox()
+		Me.Label26 = New System.Windows.Forms.Label()
+		Me.IndexLink = New System.Windows.Forms.TextBox()
+		Me.Label27 = New System.Windows.Forms.Label()
+		Me.PLocation = New System.Windows.Forms.TextBox()
 		Me.SuspendLayout()
 		'
 		'Identifier
 		'
 		Me.Identifier.Location = New System.Drawing.Point(141, 46)
 		Me.Identifier.Name = "Identifier"
-		Me.Identifier.Size = New System.Drawing.Size(478, 20)
+		Me.Identifier.Size = New System.Drawing.Size(323, 20)
 		Me.Identifier.TabIndex = 0
 		'
 		'Title
@@ -187,7 +196,7 @@ Partial Class EditWindow
 		Me.Notes.Multiline = True
 		Me.Notes.Name = "Notes"
 		Me.Notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-		Me.Notes.Size = New System.Drawing.Size(789, 172)
+		Me.Notes.Size = New System.Drawing.Size(789, 137)
 		Me.Notes.TabIndex = 14
 		'
 		'ADeath
@@ -206,7 +215,7 @@ Partial Class EditWindow
 		'
 		'OnlineRef
 		'
-		Me.OnlineRef.Location = New System.Drawing.Point(141, 990)
+		Me.OnlineRef.Location = New System.Drawing.Point(141, 995)
 		Me.OnlineRef.Multiline = True
 		Me.OnlineRef.Name = "OnlineRef"
 		Me.OnlineRef.Size = New System.Drawing.Size(789, 20)
@@ -357,7 +366,7 @@ Partial Class EditWindow
 		'Label16
 		'
 		Me.Label16.AutoSize = True
-		Me.Label16.Location = New System.Drawing.Point(12, 993)
+		Me.Label16.Location = New System.Drawing.Point(12, 998)
 		Me.Label16.Name = "Label16"
 		Me.Label16.Size = New System.Drawing.Size(60, 13)
 		Me.Label16.TabIndex = 34
@@ -451,15 +460,14 @@ Partial Class EditWindow
 		'
 		Me.DocType.Location = New System.Drawing.Point(714, 46)
 		Me.DocType.Name = "DocType"
-		Me.DocType.Size = New System.Drawing.Size(100, 20)
+		Me.DocType.Size = New System.Drawing.Size(98, 20)
 		Me.DocType.TabIndex = 45
 		'
 		'File
 		'
-		Me.File.AutoSize = True
-		Me.File.Location = New System.Drawing.Point(61, 17)
+		Me.File.Location = New System.Drawing.Point(60, 17)
 		Me.File.Name = "File"
-		Me.File.Size = New System.Drawing.Size(36, 13)
+		Me.File.Size = New System.Drawing.Size(803, 18)
 		Me.File.TabIndex = 46
 		Me.File.Text = "Folder"
 		'
@@ -499,12 +507,98 @@ Partial Class EditWindow
 		Me.Label23.TabIndex = 50
 		Me.Label23.Text = "Illustrator Dates"
 		'
+		'Publish
+		'
+		Me.Publish.AutoSize = True
+		Me.Publish.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+		Me.Publish.Location = New System.Drawing.Point(870, 13)
+		Me.Publish.Name = "Publish"
+		Me.Publish.Size = New System.Drawing.Size(60, 17)
+		Me.Publish.TabIndex = 52
+		Me.Publish.Text = "Publish"
+		Me.Publish.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+		Me.Publish.UseVisualStyleBackColor = True
+		'
+		'Label24
+		'
+		Me.Label24.AutoSize = True
+		Me.Label24.Location = New System.Drawing.Point(470, 49)
+		Me.Label24.Name = "Label24"
+		Me.Label24.Size = New System.Drawing.Size(43, 13)
+		Me.Label24.TabIndex = 53
+		Me.Label24.Text = "DB Key"
+		'
+		'DBKey
+		'
+		Me.DBKey.Location = New System.Drawing.Point(519, 46)
+		Me.DBKey.Name = "DBKey"
+		Me.DBKey.Size = New System.Drawing.Size(100, 20)
+		Me.DBKey.TabIndex = 54
+		'
+		'Label25
+		'
+		Me.Label25.AutoSize = True
+		Me.Label25.Location = New System.Drawing.Point(12, 1050)
+		Me.Label25.Name = "Label25"
+		Me.Label25.Size = New System.Drawing.Size(72, 13)
+		Me.Label25.TabIndex = 56
+		Me.Label25.Text = "Our TOC Link"
+		'
+		'TocLink
+		'
+		Me.TocLink.Location = New System.Drawing.Point(141, 1047)
+		Me.TocLink.Name = "TocLink"
+		Me.TocLink.Size = New System.Drawing.Size(789, 20)
+		Me.TocLink.TabIndex = 55
+		'
+		'Label26
+		'
+		Me.Label26.AutoSize = True
+		Me.Label26.Location = New System.Drawing.Point(12, 1076)
+		Me.Label26.Name = "Label26"
+		Me.Label26.Size = New System.Drawing.Size(76, 13)
+		Me.Label26.TabIndex = 58
+		Me.Label26.Text = "Our Index Link"
+		'
+		'IndexLink
+		'
+		Me.IndexLink.Location = New System.Drawing.Point(141, 1073)
+		Me.IndexLink.Name = "IndexLink"
+		Me.IndexLink.Size = New System.Drawing.Size(789, 20)
+		Me.IndexLink.TabIndex = 57
+		'
+		'Label27
+		'
+		Me.Label27.AutoSize = True
+		Me.Label27.Location = New System.Drawing.Point(12, 972)
+		Me.Label27.Name = "Label27"
+		Me.Label27.Size = New System.Drawing.Size(90, 13)
+		Me.Label27.TabIndex = 59
+		Me.Label27.Text = "Physical Location"
+		'
+		'PLocation
+		'
+		Me.PLocation.Location = New System.Drawing.Point(141, 969)
+		Me.PLocation.Multiline = True
+		Me.PLocation.Name = "PLocation"
+		Me.PLocation.Size = New System.Drawing.Size(789, 20)
+		Me.PLocation.TabIndex = 60
+		'
 		'EditWindow
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoScroll = True
-		Me.ClientSize = New System.Drawing.Size(955, 1072)
+		Me.ClientSize = New System.Drawing.Size(955, 1101)
+		Me.Controls.Add(Me.PLocation)
+		Me.Controls.Add(Me.Label27)
+		Me.Controls.Add(Me.Label26)
+		Me.Controls.Add(Me.IndexLink)
+		Me.Controls.Add(Me.Label25)
+		Me.Controls.Add(Me.TocLink)
+		Me.Controls.Add(Me.DBKey)
+		Me.Controls.Add(Me.Label24)
+		Me.Controls.Add(Me.Publish)
 		Me.Controls.Add(Me.Label23)
 		Me.Controls.Add(Me.Label22)
 		Me.Controls.Add(Me.ShowFolder)
@@ -614,4 +708,13 @@ Partial Class EditWindow
 	Friend WithEvents ShowFolder As Button
 	Friend WithEvents Label22 As Label
 	Friend WithEvents Label23 As Label
+	Friend WithEvents Publish As CheckBox
+	Friend WithEvents Label24 As Label
+	Friend WithEvents DBKey As TextBox
+	Friend WithEvents Label25 As Label
+	Friend WithEvents TocLink As TextBox
+	Friend WithEvents Label26 As Label
+	Friend WithEvents IndexLink As TextBox
+	Friend WithEvents Label27 As Label
+	Friend WithEvents PLocation As TextBox
 End Class

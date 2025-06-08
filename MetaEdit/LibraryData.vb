@@ -221,6 +221,8 @@ Public Class LibraryData
 		Dim searchPattern As String = "*_meta.xml"
 
 		Dim Identifier As String = ""
+		Dim DBKey As String = ""
+		Dim Publish As String = ""
 		Dim DocType As String = ""
 		Dim Title As String = ""
 		Dim EngTitle As String = ""
@@ -244,6 +246,9 @@ Public Class LibraryData
 		Dim Notes As String = ""
 		Dim OnlineUrl As String = ""
 		Dim OurUrl As String = ""
+		Dim OurToc As String = ""
+		Dim OurIndex As String = ""
+		Dim PLocation As String = ""
 
 		Dim Filename As String = FileInGrid
 		Dim xmlDoc As New XmlDocument()
@@ -291,6 +296,11 @@ Public Class LibraryData
 				Select Case NodeName
 					Case Is = "identifier"
 						Identifier = ChildNode.InnerText
+					Case Is = "dbkey"
+						DBKey = ChildNode.InnerText
+					Case Is = "public"
+						Publish = ChildNode.InnerText
+
 					Case Is = "doctype"
 						DocType = ChildNode.InnerText
 					Case Is = "title"
@@ -346,15 +356,28 @@ Public Class LibraryData
 						Abstract = ChildNode.InnerText
 					Case Is = "notes"
 						Notes = ChildNode.InnerText
-					Case Is = "URLRef"
+					Case Is = "urlref"
 						OnlineUrl = ChildNode.InnerText
-					Case Is = "URLProp"
+					Case Is = "urlprop"
 						OurUrl = ChildNode.InnerText
+					Case Is = "urltoc"
+						OurToc = ChildNode.InnerText
+					Case Is = "urlindex"
+						OurIndex = ChildNode.InnerText
+					Case Is = "location"
+						PLocation = ChildNode.InnerText
+
 				End Select
 			Next
 			EditWindow.File.Text = Filename
 			EditWindow.Identifier.Text = Identifier
+			EditWindow.DBKey.Text = DBKey
 			EditWindow.DocType.Text = DocType
+			If Publish = "True" Then
+				EditWindow.Publish.Checked = True
+			Else
+				EditWindow.Publish.Checked = False
+			End If
 			EditWindow.Title.Text = Title
 			EditWindow.EnglishTitle.Text = EngTitle
 			EditWindow.TitleAbbrev.Text = ShortTitle
@@ -375,20 +398,25 @@ Public Class LibraryData
 			EditWindow.Notes.Text = Notes
 			EditWindow.OnlineRef.Text = OnlineUrl
 			EditWindow.OurRef.Text = OurUrl
+
 			If DateVal <> "" Then
 				EditWindow.OrPub.Text = DateVal
-
 			ElseIf Year <> "" Then
 				EditWindow.OrPub.Text = Year
 			End If
 			EditWindow.Show()
 			EditWindow.BringToFront()
 			EditWindow.Edition.Text = Edition
+			EditWindow.PLocation.Text = PLocation
+			EditWindow.TocLink.Text = OurToc
+			EditWindow.IndexLink.Text = OurIndex
 		Else
 			Console.WriteLine("No metadata node found in the XML file.")
 			' clear the form in case it is being reused
 			Identifier = Path.GetFileName(Filename.Replace(searchPattern.Replace("*", ""), ""))
 			EditWindow.Identifier.Text = Identifier
+			EditWindow.DBKey.Text = DBKey
+			EditWindow.Publish.Checked = False
 			EditWindow.DocType.Text = DocType
 			EditWindow.Title.Text = Title
 			EditWindow.EnglishTitle.Text = EngTitle
@@ -412,6 +440,10 @@ Public Class LibraryData
 			EditWindow.OurRef.Text = OurUrl
 			EditWindow.OrPub.Text = Year
 			EditWindow.File.Text = Filename
+			EditWindow.PLocation.Text = PLocation
+			EditWindow.TocLink.Text = OurToc
+			EditWindow.IndexLink.Text = OurIndex
+
 			EditWindow.Show()
 			EditWindow.BringToFront()
 		End If

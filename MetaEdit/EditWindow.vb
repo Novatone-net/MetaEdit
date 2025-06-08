@@ -41,6 +41,31 @@ Public Class EditWindow
             End If
         End If
 
+        metadatanode = xmlDoc.SelectSingleNode("/metadata/dbkey")
+        If metadatanode IsNot Nothing Then
+            metadatanode.InnerText = Me.DBKey.Text
+        Else
+            If Me.DBKey.Text <> "" Then
+                'add
+                metadatanode = xmlDoc.SelectSingleNode("/metadata")
+                Dim NewChild As XmlElement = xmlDoc.CreateElement("dbkey")
+                NewChild.InnerText = Me.DBKey.Text
+                metadatanode.AppendChild(NewChild)
+            End If
+        End If
+
+        metadatanode = xmlDoc.SelectSingleNode("/metadata/public")
+        If metadatanode IsNot Nothing Then
+            metadatanode.InnerText = Me.Publish.Text
+        Else
+            'add
+            metadatanode = xmlDoc.SelectSingleNode("/metadata")
+            Dim NewChild As XmlElement = xmlDoc.CreateElement("public")
+            NewChild.InnerText = Me.Publish.Checked
+            metadatanode.AppendChild(NewChild)
+        End If
+
+
         metadatanode = xmlDoc.SelectSingleNode("/metadata/title")
         If metadatanode IsNot Nothing Then
             metadatanode.InnerText = Me.Title.Text
@@ -327,6 +352,46 @@ Public Class EditWindow
                 metadatanode.AppendChild(NewChild)
             End If
         End If
+
+        metadatanode = xmlDoc.SelectSingleNode("/metadata/location")
+        If metadatanode IsNot Nothing Then
+            metadatanode.InnerText = Me.PLocation.Text
+        Else
+            If Me.PLocation.Text <> "" Then
+                'add
+                metadatanode = xmlDoc.SelectSingleNode("/metadata")
+                Dim NewChild As XmlElement = xmlDoc.CreateElement("location")
+                NewChild.InnerText = Me.PLocation.Text
+                metadatanode.AppendChild(NewChild)
+            End If
+        End If
+
+        metadatanode = xmlDoc.SelectSingleNode("/metadata/urlindex")
+        If metadatanode IsNot Nothing Then
+            metadatanode.InnerText = Me.IndexLink.Text
+        Else
+            If Me.IndexLink.Text <> "" Then
+                'add
+                metadatanode = xmlDoc.SelectSingleNode("/metadata")
+                Dim NewChild As XmlElement = xmlDoc.CreateElement("urlindex")
+                NewChild.InnerText = Me.IndexLink.Text
+                metadatanode.AppendChild(NewChild)
+            End If
+        End If
+
+        metadatanode = xmlDoc.SelectSingleNode("/metadata/urltoc")
+        If metadatanode IsNot Nothing Then
+            metadatanode.InnerText = Me.TocLink.Text
+        Else
+            If Me.TocLink.Text <> "" Then
+                'add
+                metadatanode = xmlDoc.SelectSingleNode("/metadata")
+                Dim NewChild As XmlElement = xmlDoc.CreateElement("urltoc")
+                NewChild.InnerText = Me.TocLink.Text
+                metadatanode.AppendChild(NewChild)
+            End If
+        End If
+
         Console.WriteLine(xmlDoc.OuterXml)
         Try
             xmlDoc.Save(Filename)
@@ -378,9 +443,5 @@ Public Class EditWindow
                 Process.Start("explorer.exe", FolderPath)
             End If
         End If
-    End Sub
-
-    Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
-        Me.Hide()
     End Sub
 End Class

@@ -3,6 +3,8 @@
     <configSections>
     </configSections>
     <connectionStrings>
+        <add name="BookMetadata.My.MySettings.AGConnectionString" connectionString="Data Source=VWS\MAIN;Initial Catalog=AG;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"
+            providerName="System.Data.SqlClient" />
     </connectionStrings>
     <startup>
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8.1" />

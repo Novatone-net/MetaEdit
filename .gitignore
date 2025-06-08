@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MetaEdit/AGDataSet.Designer.vb
+/MetaEdit/AGDataSet.xsd
+/MetaEdit/AGDataSet.xss
+/MetaEdit/AGDataSet.xsc
