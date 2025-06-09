@@ -180,8 +180,19 @@ Public Class LibraryData
 
 	Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		LoadSources.Enabled = False
-		ViewBy.SelectedIndex = 0
+		'viewBy.SelectedIndex = 0
 		Me.Show()
+
+		Dim SavedSetting As String = My.Settings.Path
+		If SavedSetting <> "" Then
+			Source.Text = SavedSetting
+		Else
+			Source.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+		End If
+		SavedSetting = My.Settings.View
+		If SavedSetting <> "" Then
+			ViewBy.Text = SavedSetting
+		End If
 		Dim Pattern As String = ViewBy.SelectedItem
 		' TODO: Load saved settings like folder, view-by, window size, position and split etc.
 
@@ -634,6 +645,10 @@ Public Class LibraryData
 			'get a list of all the supported files
 			Source.Text = ChFolder.SelectedPath
 			LoadSources.PerformClick()
+			If My.Settings.Path <> Source.Text Then
+				My.Settings.Path = Source.Text
+				My.Settings.Save()
+			End If
 		End If
 	End Sub
 
@@ -849,9 +864,17 @@ Public Class LibraryData
 
 	Private Sub ViewBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ViewBy.SelectedIndexChanged
 		LoadSources.PerformClick()
+		If My.Settings.View <> ViewBy.Text Then
+			My.Settings.View = ViewBy.Text
+			My.Settings.Save()
+		End If
 	End Sub
 
 	Private Sub LibraryData_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 		' TODO: Save settings like folder, view-by, window size, position and split etc.
+	End Sub
+
+	Private Sub Source_TextChanged(sender As Object, e As EventArgs) Handles Source.TextChanged
+
 	End Sub
 End Class

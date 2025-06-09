@@ -444,4 +444,8 @@ Public Class EditWindow
             End If
         End If
     End Sub
+
+    Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
+        Me.Hide()
+    End Sub
 End Class

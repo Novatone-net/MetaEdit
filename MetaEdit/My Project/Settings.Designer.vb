@@ -54,15 +54,39 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=VWS\MAIN;Initial Catalog=AG;Integrated Security=True;Encrypt=False;Tr"& _ 
-            "ustServerCertificate=True")>  _
-        Public ReadOnly Property AGConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Path() As String
             Get
-                Return CType(Me("AGConnectionString"),String)
+                Return CType(Me("Path"),String)
             End Get
+            Set
+                Me("Path") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property View() As String
+            Get
+                Return CType(Me("View"),String)
+            End Get
+            Set
+                Me("View") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Views() As Global.Microsoft.VisualBasic.Collection
+            Get
+                Return CType(Me("Views"),Global.Microsoft.VisualBasic.Collection)
+            End Get
+            Set
+                Me("Views") = value
+            End Set
         End Property
     End Class
 End Namespace
@@ -73,8 +97,8 @@ Namespace My
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Module MySettingsProperty
-
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>
+        
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
         Friend ReadOnly Property Settings() As Global.MetaEdit.My.MySettings
             Get
                 Return Global.MetaEdit.My.MySettings.Default
